@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyber Drag Sultan - Prestasi</title>
+    <link rel="stylesheet" href="prestasi.css" />
+</head>
+
+<body>
+    <header class="header">
+        <div class="nav-container">
+            <div class="logo">COS</div>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="#home"></a>
+                    <a href="body.html">Home</a>
+                    </li>
+                    <li><a href="#about"></a>
+                        <a href="about.html">Sejarah</a>
+                    </li>
+                    <li><a href="#services"></a>
+                        <a href="prestasi.html">Prestasi</a>
+                    </li>
+                    <li><a href="#contact"></a>
+                    <a href="tentang.html">Tentang Kami</a>
+                    </li>
+                </ul>
+            </nav>
+            <button class="nav-button" onclick="window.location.href='login.html'">
+                LOGIN
+            </button>
+              
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>PRESTASI</h1>
+            <div class="hero-subtitle"></div>
+        </div>
+    </section>
+
+    <section class="stats-bar">
+        <div class="stats-container">
+            <div class="stat-item">2024</div>
+            <div class="stat-item">2025</div>
+            <div class="stat-item">2026</div>
+        </div>
+    </section>
+
+
+    <section class="achievements">
+        <div class="achievements-grid">
+    
+            <div class="achievement-card active">
+                <h3>BRAWIJAYA YOUTH CUP</h3>
+                <p>Juara I Futsal Antar Mahasiswa UB</p>
+                <small>Futsal • Sepak bola dan Olahraga</small>
+            </div>
+
+            <div class="achievement-card business">
+                <h3>Juara Business Plan</h3>
+                <p>Kompetisi Bisnis dan Inovasi</p>
+            </div>
+
+            <div class="achievement-card empty"></div>
+
+            
+            <div class="achievement-card empty"></div>
+            <div class="achievement-card empty"></div>
+            <div class="achievement-card empty"></div>
+
+            
+            <div class="achievement-card empty"></div>
+            <div class="achievement-card empty"></div>
+            <div class="achievement-card empty"></div>
+        </div>
+    </section>
+
+    <script>
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+
+        document.querySelectorAll('.achievement-card.empty').forEach(card => {
+            card.addEventListener('click', function () {
+                alert('Tempat untuk prestasi selanjutnya!');
+            });
+        });
+
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const cards = document.querySelectorAll('.achievement-card');
+            cards.forEach((card, index) => {
+                setTimeout(() => {
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, index * 100);
+            });
+        });
+    </script>
+</body>
+
+</html>

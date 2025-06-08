@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulir Pendaftaran</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+
+<body>
+    <header class="header">
+        <nav class="nav-container">
+            <div class="logo">COS</div>
+            <ul class="nav-menu">
+                <li><a href="body.html">Home</a></li>
+                <li><a href="about.html">Sejarah</a></li>
+                <li><a href="prestasi.html">Prestasi</a></li>
+                <li><a href="tentang.html">Tentang Kami</a></li>
+                <li><a href="body.html" class="active">Kembali Halaman Awal</a></li>
+                
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main-container">
+        <h1>HAI ASPRAK CANTIK DAN GANTENG :D</h1>
+        <div class="subtitle">Formulir Pendaftaran</div>
+
+        <div class="login-container">
+            <div class="login-header">
+                Silahkan Login Orang Sukses
+            </div>
+
+            <form>
+                <div class="form-group">
+                    <label for="username">Username / Email</label>
+                    <input type="text" id="username" name="username" placeholder="Masukan Username" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Masukan Password" required>
+                </div>
+
+                <button type="submit" class="btn">Login</button>
+                <button class="btn" onclick="window.location.href='singup.html'">
+                    DAFTAR SEKARANG
+                    </button>
+            </form>
+        </div>
+    </main>
+</body>
+
+</html>

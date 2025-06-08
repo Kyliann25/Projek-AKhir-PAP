@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sejarah - Luxury Gold</title>
+    <link rel="stylesheet" href="about.css" />
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="nav-container">
+            <div class="logo">COS</div>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="#home"></a>
+                    <a href="body.html">Home</a>
+                    </li>
+                    <li><a href="#about"></a>
+                        <a href="about.html">Sejarah</a>
+                    </li>
+                    <li><a href="#services"></a>
+                        <a href="prestasi.html">Prestasi</a>
+                    </li>
+                    <li><a href="#contact"></a>
+                    <a href="tentang.html">Tentang Kami</a>
+                    </li>
+                </ul>
+            </nav>
+            
+            <button class="nav-button" onclick="window.location.href='login.html'">
+                LOGIN
+            </button>
+              
+            
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Sejarah</h1>
+            <p>Perjalanan panjang kami dalam membangun kepercayaan dan solidaritas</p>
+        </div>
+    </section>
+
+    <section class="timeline-section">
+        <div class="timeline-container">
+
+            <div class="timeline-item">
+                <div class="timeline-image"> <img src="1.jpg" width="450" height="200" style="border-radius: 15px;"></div>
+                <div class="timeline-content">
+                    <div class="timeline-year">Masa MABA</div>
+                    <h3 class="timeline-title">Mulai Akrab Satu Sama Lain</h3>
+                    <p class="timeline-description">
+                        GATAU MAU NULIS APAAN
+                    </p>
+                </div>
+            </div>
+
+
+            <div class="timeline-item">
+                <div class="timeline-image"><img src="2.jpg" width="450" height="200" style="border-radius: 15px;"></div>
+                <div class="timeline-content">
+                    <div class="timeline-year">Pertengahan Semester</div>
+                    <h3 class="timeline-title">Mulai Sering Kumpul</h3>
+                    <p class="timeline-description">
+                        GATAU MAU NULIS APAAN
+                    </p>
+                </div>
+            </div>
+
+
+            <div class="timeline-item">
+                <div class="timeline-image"><img src="3.jpg" width="450" height="200" style="border-radius: 15px;"></div>
+                <div class="timeline-content">
+                    <div class="timeline-year">Akhir Semester 1</div>
+                    <h3 class="timeline-title">Belajar Bersama</h3>
+                    <p class="timeline-description">
+                        GATAU MAU NULIS APAAN
+                    </p>
+                </div>
+            </div>
+
+   
+            <div class="timeline-item">
+                <div class="timeline-image"><img src="6.jpg" width="450" height="200" style="border-radius: 15px;"></div>
+                <div class="timeline-content">
+                    <div class="timeline-year">Awal Semester 2</div>
+                    <h3 class="timeline-title">Makin Sering Kumpul</h3>
+                    <p class="timeline-description">
+                       GATAU MAU NULIS APAAN
+                    </p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-image"><img src="WhatsApp Image 2025-06-08 at 05.23.09_c9dd77b2.jpg" width="450" height="200" style="border-radius: 15px;"></div>
+                <div class="timeline-content">
+                    <div class="timeline-year">Akhir Semester 2</div>
+                    <h3 class="timeline-title">Makin Gacor</h3>
+                    <p class="timeline-description">
+                        GATAU MAU NULIS APAAN
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <div class="footer-logo">PRESENTED</div>
+                <p>CALON ORANG SUKSES :D</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="body.html">Beranda</a></li>
+                    <li><a href="tentang.html">Tentang Kami</a></li>
+                    
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Kontak</h3>
+                <ul>
+                    <li><a href="https://www.instagram.com/mhmdmuzaki.23/#">@mhmdmuzaki.23</a></li>
+                    <li><a href="https://www.instagram.com/zakijuliannn/#">@zakijuliannn</a></li>
+                    <li><a href="#">@ahmadrfsd_</a></li>
+                    <li><a href="#">@khzprtmaaa</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; COS. All rights reserved. Developed with excellence.</p>
+        </div>
+    </footer>
+
+    <script>
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.timeline-item').forEach(item => {
+            item.style.opacity = '0';
+            item.style.transform = 'translateY(30px)';
+            item.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(item);
+        });
+
+        window.addEventListener('scroll', function () {
+            const header = document.querySelector('.header');
+            if (window.scrollY > 100) {
+                header.style.backgroundColor = 'rgba(0,0,0,0.95)';
+            } else {
+                header.style.backgroundColor = '#000';
+            }
+        });
+    </script>
+</body>
+
+</html>

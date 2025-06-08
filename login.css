@@ -1,0 +1,196 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><rect fill="%23222" width="1200" height="800"/><g opacity="0.3"><rect x="0" y="0" width="300" height="800" fill="%23333"/><rect x="900" y="0" width="300" height="800" fill="%23333"/></g></svg>');
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    color: white;
+}
+
+.header {
+    background: rgba(0, 0, 0, 0.9);
+    padding: 15px 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+button{
+    color: #eceae3;
+    background-color: #DAA520;
+    border: orange;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.logo::before {
+    content: "⚜";
+    margin-right: 10px;
+    color: #DAA520;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    gap: 30px;
+}
+
+.nav-menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s;
+}
+
+.nav-menu a:hover {
+    color: #DAA520;
+}
+
+.nav-menu .active {
+    background: #DAA520;
+    padding: 8px 16px;
+    border-radius: 4px;
+    color: black;
+    font-weight: bold;
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding-top: 80px;
+}
+
+h1 {
+    font-size: 48px;
+    margin-bottom: 10px;
+    font-weight: 300;
+    text-align: center;
+}
+
+.subtitle {
+    font-size: 24px;
+    color: #DAA520;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.login-container {
+    background: rgba(0, 0, 0, 0.8);
+    border: 2px solid #00BFFF;
+    border-radius: 10px;
+    padding: 40px;
+    width: 400px;
+    box-shadow: 0 0 20px rgba(0, 191, 255, 0.3);
+}
+
+.login-header {
+    background: #DAA520;
+    color: black;
+    text-align: center;
+    padding: 15px;
+    border-radius: 25px;
+    margin-bottom: 30px;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: white;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px 15px;
+    background: rgba(128, 128, 128, 0.7);
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 14px;
+}
+
+.form-group input::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.form-group input:focus {
+    outline: none;
+    background: rgba(128, 128, 128, 0.9);
+}
+
+.btn {
+    width: 100%;
+    padding: 12px;
+    background: #DAA520;
+    color: black;
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-bottom: 15px;
+    transition: background 0.3s;
+}
+
+.btn:hover {
+    background: #B8860B;
+}
+
+.btn-register {
+    background: #DAA520;
+    color: black;
+}
+
+.btn-register:hover {
+    background: #B8860B;
+}
+
+@media (max-width: 768px) {
+    .nav-menu {
+        display: none;
+    }
+
+    .login-container {
+        width: 90%;
+        padding: 30px 20px;
+    }
+
+    h1 {
+        font-size: 36px;
+    }
+
+    .subtitle {
+        font-size: 20px;
+    }
+}

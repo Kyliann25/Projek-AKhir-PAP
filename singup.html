@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulir Pendaftaran - Sign Up</title>
+    <link rel="stylesheet" href="singup.css"
+</head>
+
+<body>
+    <header class="header">
+        <nav class="nav-container">
+            <div class="logo">COS</div>
+            <ul class="nav-menu">
+                <li><a href="body.html">Home</a></li>
+                <li><a href="about.html">Sejarah</a></li>
+                <li><a href="prestasi.html">Prestasi</a></li>
+                <li><a href="tentang.html"></a>Tentang Kami</li>
+                <li><a href="body.html" class="active">Kembali Kehalaman Awal</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main-container">
+        <h1>DAFTAR DULU YA KAKAK CANTIK GANTENG</h1>
+        <div class="subtitle">Formulir Pendaftaran Baru</div>
+
+        <div class="signup-container">
+            <div class="signup-header">
+                Daftar Sebagai Orang Sukses
+            </div>
+
+            <form id="signupForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="firstName">Nama Depan <span class="required">*</span></label>
+                        <input type="text" id="firstName" name="firstName" placeholder="Masukan Nama Depan" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="lastName">Nama Belakang <span class="required">*</span></label>
+                        <input type="text" id="lastName" name="lastName" placeholder="Masukan Nama Belakang" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email <span class="required">*</span></label>
+                    <input type="email" id="email" name="email" placeholder="Masukan Email Anda" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="username">Username <span class="required">*</span></label>
+                    <input type="text" id="username" name="username" placeholder="Masukan Username" required>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="password">Password <span class="required">*</span></label>
+                        <input type="password" id="password" name="password" placeholder="Masukan Password" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="confirmPassword">Konfirmasi Password <span class="required">*</span></label>
+                        <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Ulangi Password"
+                            required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Nomor Telepon</label>
+                    <input type="tel" id="phone" name="phone" placeholder="Masukan Nomor Telepon">
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="birthDate">Tanggal Lahir</label>
+                        <input type="date" id="birthDate" name="birthDate">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="gender">Jenis Kelamin</label>
+                        <select id="gender" name="gender">
+                            <option value="">Pilih Jenis Kelamin</option>
+                            <option value="male">Laki-laki</option>
+                            <option value="female">Perempuan</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="checkbox-group">
+                    <input type="checkbox" id="terms" name="terms" required>
+                    <label for="terms">
+                        Saya setuju dengan <a href="#">Syarat & Ketentuan</a> dan <a href="#">Kebijakan Privasi</a>
+                        <span class="required">*</span>
+                    </label>
+                </div>
+
+                <div class="checkbox-group">
+                    <input type="checkbox" id="newsletter" name="newsletter">
+                    <label for="newsletter">
+                        Saya ingin menerima newsletter dan informasi terbaru
+                    </label>
+                </div>
+
+                <button type="submit" class="btn">Daftar Sekarang</button>
+            </form>
+
+            <div class="login-link">
+                Sudah punya akun? <a href="login.html" onclick="goToLogin()">Login di sini</a>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        document.getElementById('signupForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const formData = new FormData(this);
+            const password = formData.get('password');
+            const confirmPassword = formData.get('confirmPassword');
+            const terms = formData.get('terms');
+
+            if (password !== confirmPassword) {
+                alert('Password dan konfirmasi password tidak sama!');
+                return;
+            }
+
+            if (password.length < 6) {
+                alert('Password minimal 6 karakter!');
+                return;
+            }
+
+            if (!terms) {
+                alert('Anda harus menyetujui Syarat & Ketentuan!');
+                return;
+            }
+
+            const firstName = formData.get('firstName');
+            const lastName = formData.get('lastName');
+            const email = formData.get('email');
+
+            alert(`Pendaftaran berhasil!\n\nSelamat datang, ${firstName} ${lastName}!\nEmail: ${email}\n\nSilakan login dengan akun yang telah dibuat.`);
+
+            this.reset();
+        });
+
+        function goToLogin() {
+ 
+            alert('Redirect ke halaman login...');
+ 
+        }
+
+        document.getElementById('confirmPassword').addEventListener('input', function () {
+            const password = document.getElementById('password').value;
+            const confirmPassword = this.value;
+
+            if (confirmPassword && password !== confirmPassword) {
+                this.style.borderColor = '#ff6b6b';
+            } else {
+                this.style.borderColor = 'transparent';
+            }
+        });
+
+        document.getElementById('password').addEventListener('input', function () {
+            const password = this.value;
+            const minLength = 6;
+
+            if (password.length > 0 && password.length < minLength) {
+                this.style.borderColor = '#ff6b6b';
+            } else if (password.length >= minLength) {
+                this.style.borderColor = '#4CAF50';
+            } else {
+                this.style.borderColor = 'transparent';
+            }
+        });
+    </script>
+</body>
+
+</html>
